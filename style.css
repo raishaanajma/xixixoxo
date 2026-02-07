@@ -48,6 +48,8 @@ nav {
     justify-content: flex-end; /* Nav di kanan atas */
     align-items: center;
     margin-bottom: 10px; /* Spacing antara nav dan h1 */
+    border-bottom: 1px solid #000000; /* Garis lurus hitam di bawah navigasi */
+    padding-bottom: 10px; /* Padding bawah untuk spacing dari garis */
 }
 
 .nav-list {
