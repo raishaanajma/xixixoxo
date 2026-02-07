@@ -47,5 +47,33 @@ function updateButtons() {
     }
 }
 
+// Search Functionality
+function searchProducts() {
+    const query = document.getElementById('search-bar').value.toLowerCase();
+    const cards = document.querySelectorAll('.product-card');
+    const noResults = document.getElementById('no-results');
+    let found = false;
+
+    cards.forEach(card => {
+        const name = card.querySelector('h3').textContent.toLowerCase();
+        if (name.includes(query)) {
+            card.style.display = 'block';
+            found = true;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    if (found) {
+        noResults.style.display = 'none';
+    } else {
+        noResults.style.display = 'block';
+    }
+
+    // Reset slider setelah search
+    currentIndex = 0;
+    updateSlider();
+}
+
 // Inisialisasi tombol saat load
 updateButtons();

@@ -11,6 +11,7 @@
     <header>
         <div class="container">
             <h1>XIXIXOXO Store ✨</h1>
+            <nav>
                 <ul class="nav-list">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#pricelist">Pricelist</a></li>
@@ -34,6 +35,8 @@
     <section id="pricelist" class="pricelist">
         <div class="container">
             <h2>Premium Application</h2>
+            <input type="text" id="search-bar" placeholder="Cari produk (misal: Netflix, Canva)" onkeyup="searchProducts()">
+            <div id="no-results" style="display: none; text-align: center; margin: 20px; color: #808080;">Produk tidak ditemukan</div>
             <div class="slider-container">
                 <button class="slider-btn prev" onclick="slidePrev()">&lt;</button>
                 <div class="slider">
@@ -41,6 +44,21 @@
                         <img src="./logo/Netflix_Symbol_PMS.png" alt="Netflix Logo">
                         <h3>Netflix</h3>
                         <span class="price">7 hari : Rp15.000</span>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/300x200/FE7F9C/FFFFFF?text=Canva+Logo" alt="Canva Logo">
+                        <h3>Canva</h3>
+                        <span class="price">1 bulan : Rp50.000</span>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/300x200/FE7F9C/FFFFFF?text=Spotify+Logo" alt="Spotify Logo">
+                        <h3>Spotify</h3>
+                        <span class="price">3 bulan : Rp75.000</span>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/300x200/FE7F9C/FFFFFF?text=YouTube+Premium+Logo" alt="YouTube Premium Logo">
+                        <h3>YouTube Premium</h3>
+                        <span class="price">1 tahun : Rp200.000</span>
                     </div>
                 </div>
                 <button class="slider-btn next" onclick="slideNext()">&gt;</button>
