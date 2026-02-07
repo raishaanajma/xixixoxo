@@ -47,7 +47,7 @@ nav {
     display: flex;
     justify-content: flex-end; /* Nav di kanan atas */
     align-items: center;
-    margin-bottom: 10px; /* Spacing antara nav dan h1 */
+    margin-bottom: 20px; /* Ditingkatkan dari 10px untuk jarak lebih antara garis dan h1 */
     position: relative; /* Untuk pseudo-element */
     padding-bottom: 20px; /* Ditingkatkan dari 10px untuk jarak lebih antara garis dan navigasi */
 }
