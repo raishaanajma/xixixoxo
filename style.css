@@ -97,20 +97,9 @@ header h1 {
     margin: 10px 0; /* Jarak atas dan bawah agar tidak rapat */
 }
 
-/* Hamburger Menu untuk Mobile */
+/* Hamburger Menu untuk Mobile - Dihilangkan */
 .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: #FFFFFF;
-    margin: 3px 0;
-    transition: 0.3s;
-    border-radius: 2px; /* Bulat untuk cute */
+    display: none; /* Sembunyikan hamburger di semua mode */
 }
 
 /* Hero Section */
@@ -166,9 +155,12 @@ header h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #000000; /* Tetap solid, tidak terpengaruh opacity */
-    border-bottom: 3px solid #DA1884; /* Underline warna #DA1884 */
+    text-decoration: underline; /* Text underline */
+    text-decoration-color: #DA1884; /* Warna underline sama dengan hover */
+    text-decoration-thickness: 3px; /* Ketebalan underline */
+    text-underline-offset: 15px; /* Jarak antara teks dengan underline */
     display: inline-block;
-    padding-bottom: 10px;
+    padding-bottom: 10px; /* Padding bawah untuk spacing */
     position: relative; /* Agar teks di atas gambar */
     z-index: 1; /* Di atas gambar */
 }
@@ -357,23 +349,17 @@ footer {
     }
 
     .nav-list {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: linear-gradient(45deg, #F25278, #FFB6C1); /* Gradasi untuk mobile menu */
-        padding: 20px;
-        border-radius: 0 0 20px 20px;
-    }
-
-    .nav-list.active {
-        display: flex;
+        display: flex; /* Tetap tampilkan navigasi */
+        flex-direction: column; /* Vertikal untuk mobile */
+        gap: 15px; /* Jarak disesuaikan untuk dimensi layar */
+        position: static; /* Tidak absolute */
+        background: none; /* Hapus background gradasi */
+        padding: 10px; /* Padding lebih kecil */
+        border-radius: 0; /* Hapus border-radius */
     }
 
     .hamburger {
-        display: flex;
+        display: none; /* Pastikan hamburger tersembunyi */
     }
 
     .hero h2 {
