@@ -39,23 +39,15 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #000000; /* Hitam biasa tanpa shading */
-    /* Text-shadow dihapus */
-    flex: 1;
-    text-align: center; /* Tengah */
+    flex-direction: column; /* Nav di atas, h1 di bawah */
+    align-items: stretch; /* H1 penuh lebar */
 }
 
 nav {
     display: flex;
-    justify-content: flex-end; /* Rata kanan */
+    justify-content: flex-end; /* Nav di kanan atas */
     align-items: center;
+    margin-bottom: 10px; /* Spacing antara nav dan h1 */
 }
 
 .nav-list {
@@ -74,6 +66,15 @@ nav {
 .nav-list a:hover {
     color: #DA1884; /* Warna hover #DA1884 */
     transform: scale(1.1); /* Bounce effect untuk cute */
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000000; /* Hitam biasa tanpa shading */
+    /* Text-shadow dihapus */
+    text-align: center; /* Tengah penuh lebar */
+    width: 100%; /* Dari ujung ke ujung screen */
 }
 
 /* Hamburger Menu untuk Mobile */
@@ -133,14 +134,18 @@ nav {
 
 #search-bar {
     display: block;
-    margin: 0 auto 40px; /* Tengah dan spacing bawah */
+    margin: 0 0 40px 0; /* Rata kiri, spacing bawah */
     padding: 10px;
     width: 50%;
     max-width: 400px;
     border: 1px solid #ccc;
     border-radius: 10px;
     font-size: 1rem;
-    text-align: center;
+    text-align: left; /* Rata kiri */
+}
+
+#search-bar:focus {
+    outline: 2px solid #DA1884; /* Outline pink saat focus */
 }
 
 /* Slider Container */
@@ -234,7 +239,7 @@ nav {
 footer {
     background-color: #FFFFFF; /* Putih */
     color: #000000; /* Tulisan hitam */
-    padding: 60px 0; /* Spacing diperbesar dari 40px untuk tidak rapat */
+    padding: 40px 0; /* Spacing diperkecil kembali ke 40px */
     text-align: center;
     border-radius: 20px 20px 0 0; /* Bulat atas untuk cute */
     margin-top: 20px;
