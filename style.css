@@ -185,6 +185,7 @@ header h1 {
     transition: all 0.3s;
     margin: 0 10px;
     min-width: 280px; /* Lebar kartu */
+    padding-bottom: 20px; /* Ruang bawah agar lekukan terlihat dan tidak terpotong footer */
 }
 
 .product-card:hover {
@@ -205,6 +206,18 @@ header h1 {
     color: #000000;
 }
 
+.product-card h4 {
+    font-size: 1rem; /* Diperkecil dari 1.2rem */
+    font-weight: bold; /* Bold sebagai sub header */
+    margin: 15px; /* Margin default */
+    margin-top: 0; /* Tidak ada margin-top untuk sub header pertama */
+    color: #000000;
+}
+
+.product-card h4:not(:first-of-type) {
+    margin-top: 20px; /* Spasi atas untuk sub header selain yang pertama */
+}
+
 .product-card p {
     margin: 0 15px;
     color: #808080;
@@ -212,10 +225,10 @@ header h1 {
 
 .price {
     display: block;
-    font-size: 1rem; /* Diperkecil dari 1.3rem */
+    font-size: 0.9rem; /* Diperkecil dari 1rem */
     font-weight: normal; /* Tanpa bold */
     color: #000000; /* Hitam biasa */
-    margin: 15px;
+    margin: 5px 15px; /* Margin lebih kecil untuk harga */
 }
 
 /* Slider Buttons */
@@ -256,7 +269,7 @@ footer {
     padding: 40px 0; /* Spacing diperkecil kembali ke 40px */
     text-align: center;
     border-radius: 20px 20px 0 0; /* Bulat atas untuk cute */
-    margin-top: 20px;
+    margin-top: 40px; /* Ditingkatkan dari 20px untuk ruang lebih */
 }
 
 /* Responsivitas */
