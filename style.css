@@ -39,7 +39,7 @@ header::before {
     background: linear-gradient(45deg, #f2bdcd, #f5dadf, #e89eb8); /* Gradasi dengan #FE7F9C sebagai base */
     background-size: 300% 300%; /* Ukuran besar untuk animasi */
     animation: gradientShift 5s ease infinite; /* Animasi gradasi bergerak */
-    opacity: 0.3; /* Transparan agar background putih terlihat */
+    opacity: 0.25; /* Transparan agar background putih terlihat */
     z-index: -1; /* Di belakang konten */
 }
 
@@ -115,20 +115,62 @@ header h1 {
 
 /* Hero Section */
 .hero {
-    background-color: #F8F8F8; /* Abu-abu muda */
     padding: 100px 0;
     text-align: center;
     border-radius: 20px; /* Bulat untuk cute */
     margin: 20px;
+    position: relative; /* Untuk pseudo-element */
 }
 
-.hero h2 {
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./asset/vivi-campos-artesanato--yHaS_K1xgw-unsplash.jpg'); /* Gambar background cover seluruh section */
+    background-size: cover; /* Cover seluruh area section */
+    background-position: center; /* Tengah */
+    background-repeat: no-repeat; /* Tidak repeat */
+    opacity: 0.25; /* Opacity hanya pada gambar, tidak pada teks */
+    z-index: -1; /* Di belakang konten */
+    border-radius: 20px; /* Sama dengan section */
+}
+
+.hero .container {
+    position: relative; /* Agar teks di atas background */
+    z-index: 1; /* Di atas background */
+}
+
+.welcome-text {
+    position: relative; /* Untuk positioning gambar */
+    display: inline-block; /* Agar background hanya cover teks */
+    padding: 10px 20px; /* Padding untuk area background */
+    border-radius: 10px; /* Bulat sedikit */
+}
+
+.welcome-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover area teks */
+    opacity: 0.25; /* Opacity 25% pada gambar */
+    z-index: -1; /* Di belakang teks */
+    border-radius: 10px; /* Sama dengan welcome-text */
+}
+
+.welcome-text h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #000000;
+    color: #000000; /* Tetap solid, tidak terpengaruh opacity */
     border-bottom: 3px solid #DA1884; /* Underline warna #DA1884 */
     display: inline-block;
     padding-bottom: 10px;
+    position: relative; /* Agar teks di atas gambar */
+    z-index: 1; /* Di atas gambar */
 }
 
 .hero p {
