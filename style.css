@@ -70,7 +70,7 @@ nav {
 
 header h1 {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 400; /* Diubah dari 700 ke 400 (normal, tidak bold) */
     color: #000000; /* Hitam biasa tanpa shading */
     /* Text-shadow dihapus */
     text-align: center; /* Tengah penuh lebar */
@@ -134,8 +134,9 @@ header h1 {
 
 .search-container {
     position: relative;
-    display: inline-block;
-    margin: 0 0 40px 0; /* Rata kiri, spacing bawah */
+    display: block; /* Pastikan block untuk di bawah */
+    margin: 20px 0 40px 0; /* Margin top untuk spacing dari h2, rata kiri */
+    text-align: left; /* Rata kiri */
 }
 
 .search-icon {
