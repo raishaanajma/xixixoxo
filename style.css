@@ -337,6 +337,16 @@ footer {
     background-color: #000000; /* Garis hitam */
 }
 
+/* Footer Links */
+footer a {
+    color: #DA1884; /* Warna hyperlink #DA1884 */
+    text-decoration: none; /* Hapus underline default */
+}
+
+footer a:hover {
+    color: #DA1884; /* Tetap #DA1884 saat hover */
+}
+
 /* Responsivitas */
 @media (max-width: 768px) {
     header .container {
