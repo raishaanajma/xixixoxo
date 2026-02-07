@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Noto Sans KR', sans-serif; /* Font Korean-style */
+    font-family: 'Lato', sans-serif; /* Font Lato */
     line-height: 1.6;
     color: #000000; /* Hitam */
     background-color: #FFFFFF; /* Putih */
@@ -106,7 +106,7 @@ header h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #000000;
-    border-bottom: 3px solid #FE7F9C; /* Garis pink #FE7F9C bawah untuk cute */
+    border-bottom: 3px solid #DA1884; /* Underline warna #DA1884 */
     display: inline-block;
     padding-bottom: 10px;
 }
@@ -127,19 +127,32 @@ header h1 {
     font-size: 2rem;
     margin-bottom: 20px; /* Kurangi margin untuk search bar */
     color: #000000;
-    border-bottom: 3px solid #FE7F9C; /* Garis pink #FE7F9C bawah */
+    border-bottom: 3px solid #DA1884; /* Underline warna #DA1884 */
     display: inline-block;
     padding-bottom: 10px;
 }
 
-#search-bar {
-    display: block;
+.search-container {
+    position: relative;
+    display: inline-block;
     margin: 0 0 40px 0; /* Rata kiri, spacing bawah */
-    padding: 10px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #808080;
+}
+
+#search-bar {
+    padding: 10px 10px 10px 40px; /* Padding kiri untuk ikon */
     width: 50%;
     max-width: 400px;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 25px; /* Oval shape */
     font-size: 1rem;
     text-align: left; /* Rata kiri */
 }

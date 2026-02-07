@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XIXIXOXO Store</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet"> <!-- Font Korean-style -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet"> <!-- Font Lato -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet"> <!-- Font Korean-style jika diperlukan -->
 </head>
 <body>
     <header>
@@ -35,7 +36,10 @@
     <section id="pricelist" class="pricelist">
         <div class="container">
             <h2>Premium Application</h2>
-            <input type="text" id="search-bar" placeholder="Search product here" onkeyup="searchProducts()">
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-bar" placeholder="Search product here" onkeyup="searchProducts()">
+            </div>
             <div id="no-results" style="display: none; text-align: center; margin: 20px; color: #808080;">Produk tidak ditemukan</div>
             <div class="slider-container">
                 <button class="slider-btn prev" onclick="slidePrev()">&lt;</button>
