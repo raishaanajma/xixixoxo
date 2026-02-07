@@ -21,7 +21,7 @@ body {
 
 /* Header dengan Animated Gradient */
 header {
-    background: linear-gradient(45deg, #b02455, #ffd0f4, #87093F); /* Gradasi dengan #FE7F9C sebagai base */
+    background: linear-gradient(45deg, #f2bdcd, #f5dadf, #e89eb8); /* Gradasi dengan #FE7F9C sebagai base */
     background-size: 300% 300%; /* Ukuran besar untuk animasi */
     animation: gradientShift 5s ease infinite; /* Animasi gradasi bergerak */
     padding: 20px 0;
