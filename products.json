@@ -18,6 +18,12 @@
       ]
     },
     {
+      "name": "CapCut",
+      "plans": [
+        { "type": "Sharing 5 Users", "prices": [""7 hari : Rp12.000", "1 bulan : Rp20.000"] },
+      ]
+    },
+    {
       "name": "ChatGPT",
       "plans": [
         { "type": "Sharing 7 Users", "prices": ["1 hari : Rp4.000", "2 hari : Rp6.000", "3 hari : Rp7.000", "7 hari : Rp11.000", "1 bulan : Rp35.000"] },
