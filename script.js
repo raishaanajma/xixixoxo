@@ -8,6 +8,8 @@ let currentIndex = 0;
 const slider = document.querySelector('.slider');
 const totalSlides = document.querySelectorAll('.product-card').length;
 const visibleSlides = 3; // Tampilkan 3 produk sekaligus (produk 1-2-3)
+const prevBtn = document.querySelector('.slider-btn.prev');
+const nextBtn = document.querySelector('.slider-btn.next');
 
 function slideNext() {
     if (currentIndex < totalSlides - visibleSlides) {
@@ -26,4 +28,24 @@ function slidePrev() {
 function updateSlider() {
     const translateX = -currentIndex * 300; // 300px per kartu (sesuaikan dengan min-width)
     slider.style.transform = `translateX(${translateX}px)`;
+    updateButtons();
 }
+
+function updateButtons() {
+    // Sembunyikan tombol prev jika di awal
+    if (currentIndex === 0) {
+        prevBtn.style.display = 'none';
+    } else {
+        prevBtn.style.display = 'block';
+    }
+
+    // Sembunyikan tombol next jika di akhir
+    if (currentIndex >= totalSlides - visibleSlides) {
+        nextBtn.style.display = 'none';
+    } else {
+        nextBtn.style.display = 'block';
+    }
+}
+
+// Inisialisasi tombol saat load
+updateButtons();
