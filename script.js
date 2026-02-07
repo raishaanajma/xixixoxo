@@ -7,7 +7,13 @@ function toggleMenu() {
 let currentIndex = 0;
 const slider = document.querySelector('.slider');
 const totalSlides = document.querySelectorAll('.product-card').length;
-const visibleSlides = 3; // Tampilkan 3 produk sekaligus (produk 1-2-3)
+let visibleSlides = 3; // Default 3 untuk desktop
+
+// Deteksi mobile dan set visibleSlides
+if (window.innerWidth <= 768) {
+    visibleSlides = 1; // Hanya 1 card terlihat di mobile
+}
+
 const prevBtn = document.querySelector('.slider-btn.prev');
 const nextBtn = document.querySelector('.slider-btn.next');
 
@@ -26,7 +32,7 @@ function slidePrev() {
 }
 
 function updateSlider() {
-    const translateX = -currentIndex * 300; // 300px per kartu (sesuaikan dengan min-width)
+    const translateX = -currentIndex * (window.innerWidth <= 768 ? 280 : 300); // 280px untuk mobile, 300px untuk desktop
     slider.style.transform = `translateX(${translateX}px)`;
     updateButtons();
 }
@@ -83,6 +89,7 @@ const sliderContainer = document.querySelector('.slider-container');
 
 sliderContainer.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
+    e.preventDefault(); // Mencegah scroll default
 });
 
 sliderContainer.addEventListener('touchend', (e) => {
@@ -92,7 +99,7 @@ sliderContainer.addEventListener('touchend', (e) => {
 
 function handleSwipe() {
     const diffX = startX - endX;
-    const threshold = 50; // Minimum jarak swipe
+    const threshold = 30; // Threshold lebih kecil untuk sensitivitas
 
     if (Math.abs(diffX) > threshold) {
         if (diffX > 0) {
