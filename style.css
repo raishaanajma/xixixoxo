@@ -379,8 +379,6 @@ footer {
     }
 
     .slider-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
+        display: none; /* Sembunyikan slide button di mobile */
     }
 }

@@ -75,5 +75,35 @@ function searchProducts() {
     updateSlider();
 }
 
+// Swipe Functionality for Mobile
+let startX = 0;
+let endX = 0;
+
+const sliderContainer = document.querySelector('.slider-container');
+
+sliderContainer.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+});
+
+sliderContainer.addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    const diffX = startX - endX;
+    const threshold = 50; // Minimum jarak swipe
+
+    if (Math.abs(diffX) > threshold) {
+        if (diffX > 0) {
+            // Swipe kiri: next
+            slideNext();
+        } else {
+            // Swipe kanan: prev
+            slidePrev();
+        }
+    }
+}
+
 // Inisialisasi tombol saat load
 updateButtons();
