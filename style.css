@@ -39,17 +39,19 @@ header {
 
 header .container {
     display: flex;
-    flex-direction: column; /* Nav di atas, h1 di bawah */
-    align-items: stretch; /* H1 penuh lebar */
+    flex-direction: row; /* Diubah ke row untuk selevel */
+    justify-content: space-between; /* H1 kiri, nav kanan */
+    align-items: center; /* Selevel */
 }
 
 nav {
     display: flex;
-    justify-content: flex-end; /* Nav di kanan atas */
+    justify-content: flex-end; /* Nav di kanan */
     align-items: center;
-    margin-bottom: 20px; /* Ditingkatkan dari 10px untuk jarak lebih antara garis dan h1 */
     position: relative; /* Untuk pseudo-element */
     padding-bottom: 20px; /* Ditingkatkan dari 10px untuk jarak lebih antara garis dan navigasi */
+    margin-left: -20px; /* Imbang padding container kiri */
+    margin-right: -20px; /* Imbang padding container kanan */
 }
 
 nav::after {
@@ -82,12 +84,12 @@ nav::after {
 }
 
 header h1 {
-    font-size: 2rem;
-    font-weight: 400; /* Diubah dari 700 ke 400 (normal, tidak bold) */
+    font-size: 1rem; /* Diubah ke 1rem untuk sama dengan navigasi */
+    font-weight: 700; /* Diubah ke 700 (bold) */
     color: #000000; /* Hitam biasa tanpa shading */
     /* Text-shadow dihapus */
-    text-align: center; /* Tengah penuh lebar */
-    width: 100%; /* Dari ujung ke ujung screen */
+    text-align: left; /* Rata kiri */
+    margin: 0; /* Reset margin */
 }
 
 /* Hamburger Menu untuk Mobile */
