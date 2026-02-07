@@ -89,7 +89,7 @@ const sliderContainer = document.querySelector('.slider-container');
 
 sliderContainer.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
-    e.preventDefault(); // Mencegah scroll default
+    // e.preventDefault(); // Dihapus agar user bisa scroll
 });
 
 sliderContainer.addEventListener('touchend', (e) => {
