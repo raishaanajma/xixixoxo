@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "name": "Canva",
+      "plans": [
+        { "type": "Education", "prices": ["6 bulan : Rp14.000", "Lifetime (garansi 8 bulan) : Rp16.000"] },
+        { "type": "Member/Pro", "prices": ["1 hari : Rp1.500", "3 hari : Rp3.500", "7 hari : Rp5.500", "1 bulan : Rp7.000", "2 bulan : Rp10.000", "3 bulan : Rp15.000"] },
+        { "type": "Head", "prices": ["1 bulan : Rp12.000"] }
+      ]
+    },
+    {
+      "name": "Disney+",
+      "plans": [
+        { "type": "Private", "prices": ["1 bulan - basic : Rp80.000", "1 bulan - premium : Rp135.000"] },
+        { "type": "Sharing 6 Users", "prices": ["1 hari : Rp3.000", "2 hari : Rp9.000", "3 hari : Rp8.000", "7 hari : Rp12.000", "1 bulan : Rp26.000"] },
+        { "type": "Sharing 3 Users", "prices": ["1 hari : Rp5.000", "2 hari : Rp11.000", "3 hari : Rp14.000", "7 hari : Rp20.000", "1 bulan : Rp36.000"] }
+      ]
+    },
+    {
+      "name": "Netflix",
+      "plans": [
+        { "type": "Sharing 1 Profile 1 User", "prices": ["1 hari : Rp15.000", "3 hari : Rp9.000", "5 hari : Rp11.000", "7 hari : Rp16.000", "14 hari : Rp21.000", "1 bulan : Rp38.000"] },
+        { "type": "Sharing 1 Profile 2 Users", "prices": ["1 bulan : Rp28.000"] },
+        { "type": "Semiprivate", "prices": ["1 bulan : Rp43.000"] },
+        { "type": "Private", "prices": ["7 hari : Rp45.000", "1 bulan : Rp185.000"] }
+      ]
+    }
+  ]
+}
