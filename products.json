@@ -1,11 +1,27 @@
 {
   "products": [
     {
+      "name": "Amazon Prime Video",
+      "plans": [
+        { "type": "Sharing 3 Users", "prices": ["1 bulan : Rp10.000", "2 bulan : 15.000"] },
+        { "type": "Sharing 4 Users", "prices": ["1 bulan : Rp8.000", "2 bulan : 12.000"] },
+        { "type": "Sharing 5 Users", "prices": ["1 bulan : Rp7.000", "2 bulan : 10.000"] },
+        { "type": "Private", "prices": ["1 bulan : Rp25.000"] }
+      ]
+    },
+    {
       "name": "Canva",
       "plans": [
         { "type": "Education", "prices": ["6 bulan : Rp14.000", "Lifetime (garansi 8 bulan) : Rp16.000"] },
         { "type": "Member/Pro", "prices": ["1 hari : Rp1.500", "3 hari : Rp3.500", "7 hari : Rp5.500", "1 bulan : Rp7.000", "2 bulan : Rp10.000", "3 bulan : Rp15.000"] },
         { "type": "Head", "prices": ["1 bulan : Rp12.000"] }
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "plans": [
+        { "type": "Sharing 7 Users", "prices": ["1 hari : Rp4.000", "2 hari : Rp6.000", "3 hari : Rp7.000", "7 hari : Rp11.000", "1 bulan : Rp35.000"] },
+        { "type": "Private", "prices": ["1 bulan : Rp200.000"] }
       ]
     },
     {
