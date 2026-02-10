@@ -23,6 +23,8 @@ async function loadProducts() {
         const data = await response.json();
         console.log('Products loaded:', data);
         products = data.products;
+        // Sort produk berdasarkan nama alfabetik
+        products.sort((a, b) => a.name.localeCompare(b.name));
         totalSlides = products.length;
         generateProductCards(products);
         updateButtons();
