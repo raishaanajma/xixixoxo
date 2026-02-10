@@ -5,7 +5,7 @@ let visibleSlides = 3; // Default 3 untuk desktop
 
 // Deteksi mobile dan set visibleSlides
 if (window.innerWidth <= 768) {
-    visibleSlides = 1; // Hanya 1 card terlihat di mobile
+    visibleSlides = 1; // Hanya 1 card terlihat di mobile, tapi scroll smooth
 }
 
 const prevBtn = document.querySelector('.slider-btn.prev');
@@ -24,7 +24,9 @@ async function loadProducts() {
         products = data.products;
         totalSlides = products.length;
         generateProductCards(products);
-        updateButtons();
+        if (window.innerWidth > 768) {
+            updateButtons(); // Button hanya untuk desktop
+        }
     } catch (error) {
         console.error('Error loading products:', error);
         // Fallback: Gunakan array kosong atau hardcode jika perlu
@@ -65,8 +67,10 @@ function generateProductCards(productsToShow) {
 
     // Update totalSlides setelah generate
     totalSlides = productsToShow.length;
-    currentIndex = 0;
-    updateSlider();
+    if (window.innerWidth > 768) {
+        currentIndex = 0;
+        updateSlider(); // Slider logic hanya untuk desktop
+    }
 }
 
 // Toggle Menu (Tetap)
@@ -75,43 +79,47 @@ function toggleMenu() {
     navList.classList.toggle('active');
 }
 
-// Slider Functionality
+// Slider Functionality (Hanya untuk desktop)
 let currentIndex = 0;
 
 function slideNext() {
-    if (currentIndex < totalSlides - visibleSlides) {
+    if (window.innerWidth > 768 && currentIndex < totalSlides - visibleSlides) {
         currentIndex++;
         updateSlider();
     }
 }
 
 function slidePrev() {
-    if (currentIndex > 0) {
+    if (window.innerWidth > 768 && currentIndex > 0) {
         currentIndex--;
         updateSlider();
     }
 }
 
 function updateSlider() {
-    const translateX = -currentIndex * (window.innerWidth <= 768 ? 280 : 300); // 280px untuk mobile, 300px untuk desktop
-    const slider = document.querySelector('.slider');
-    slider.style.transform = `translateX(${translateX}px)`;
-    updateButtons();
+    if (window.innerWidth > 768) {
+        const translateX = -currentIndex * 300; // 300px untuk desktop
+        const slider = document.querySelector('.slider');
+        slider.style.transform = `translateX(${translateX}px)`;
+        updateButtons();
+    }
 }
 
 function updateButtons() {
-    // Sembunyikan tombol prev jika di awal
-    if (currentIndex === 0) {
-        prevBtn.style.display = 'none';
-    } else {
-        prevBtn.style.display = 'block';
-    }
+    if (window.innerWidth > 768) {
+        // Sembunyikan tombol prev jika di awal
+        if (currentIndex === 0) {
+            prevBtn.style.display = 'none';
+        } else {
+            prevBtn.style.display = 'block';
+        }
 
-    // Sembunyikan tombol next jika di akhir
-    if (currentIndex >= totalSlides - visibleSlides) {
-        nextBtn.style.display = 'none';
-    } else {
-        nextBtn.style.display = 'block';
+        // Sembunyikan tombol next jika di akhir
+        if (currentIndex >= totalSlides - visibleSlides) {
+            nextBtn.style.display = 'none';
+        } else {
+            nextBtn.style.display = 'block';
+        }
     }
 }
 
@@ -129,33 +137,7 @@ function searchProducts() {
     }
 }
 
-// Swipe Functionality for Mobile
-let startX = 0;
-let endX = 0;
-
-const sliderContainer = document.querySelector('.slider-container');
-
-sliderContainer.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-});
-
-sliderContainer.addEventListener('touchend', (e) => {
-    endX = e.changedTouches[0].clientX;
-    handleSwipe();
-});
-
-function handleSwipe() {
-    const diffX = startX - endX;
-    const threshold = 30;
-
-    if (Math.abs(diffX) > threshold) {
-        if (diffX > 0) {
-            slideNext();
-        } else {
-            slidePrev();
-        }
-    }
-}
+// Swipe Functionality dihapus karena scroll native sudah smooth
 
 // Inisialisasi
 document.addEventListener('DOMContentLoaded', () => {
