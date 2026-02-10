@@ -45,13 +45,15 @@
         overflow-x: auto; /* Enable horizontal scroll */
         overflow-y: auto; /* Enable vertical scroll jika diperlukan */
         -webkit-overflow-scrolling: touch; /* Smooth scroll di iOS */
-        scrollbar-width: none; /* Hide scrollbar di Firefox */
-        -ms-overflow-style: none; /* Hide scrollbar di IE/Edge */
+        scroll-behavior: smooth; /* Smooth scroll di semua browser */
+        /* Hide scrollbar sementara dihapus untuk test */
+        /* scrollbar-width: none; */
+        /* -ms-overflow-style: none; */
     }
 
-    .slider-container::-webkit-scrollbar {
-        display: none; /* Hide scrollbar di Webkit browsers */
-    }
+    /* .slider-container::-webkit-scrollbar {
+        display: none;
+    } */
 
     .slider {
         width: auto; /* Auto width untuk scroll */
