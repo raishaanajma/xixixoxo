@@ -1,5 +1,31 @@
 {
   "products": [
-    // Kosong atau produk default jika perlu
+    {
+      "name": "Canva",
+      "plans": [
+        {
+          "type": "Education",
+          "prices": ["6 bulan : Rp14.000"]
+        }
+      ]
+    },
+    {
+      "name": "Adobe",
+      "plans": [
+        {
+          "type": "Pro",
+          "prices": ["1 bulan : Rp20.000"]
+        }
+      ]
+    },
+    {
+      "name": "Spotify",
+      "plans": [
+        {
+          "type": "Premium",
+          "prices": ["1 tahun : Rp50.000"]
+        }
+      ]
+    }
   ]
 }
