@@ -15,7 +15,7 @@ const nextBtn = document.querySelector('.slider-btn.next');
 async function loadProducts() {
     try {
         console.log('Loading products.json from GitHub...');
-        const response = await fetch('https://raw.githubusercontent.com/raishaanajma/xixixoxostore/main/products.json');
+        const response = await fetch('https://raw.githubusercontent.com/raishaanajma/xixixoxostore/main/products.json?token=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');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
